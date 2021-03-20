@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Loops in JS</title>
+</head>
+<body>
+    <h1>Loops in JavaScript</h1>
+        <h2>For Loop</h2>
+    <form>
+        <label for="num">Enter the number for the multiplication table</label>
+        <input id="num" type=text>
+        <br><br>
+        <label for="range">Enter the range for the multiplication table</label>
+        <input id="range" type=text>
+        <br><br>    
+        <button type="submit" id="submit" onclick=>Done</button>
+    </form>
+
+    <h3 id="output"></h3>
+
+
+    <script>
+        // let score = 10
+        // score = score + 5
+
+        // score++
+        // console.log(score)
+
+        for(itr=0; itr < 5; itr++) {
+            console.log('hello world')
+        }
+
+
+        let fruits = ['apple', 'banana', 'mangoes', 'strawberries', 'peach']
+
+        let sno = 0
+
+        fruits.forEach(function(fruit) {
+            sno++
+            console.log(`${sno}. ${fruit}`)
+        })
+
+        // const num = parseInt(prompt("Enter the number for the multiplication table"))
+        // const range = parseInt(prompt("Enter the range for the multiplication table"))
+
+        const num = document.getElementById('num')
+        const range = document.getElementById('range')
+        const submit = document.getElementById('submit')
+        const output = document.getElementById('output')
+
+        submit.addEventListener('click', (e) => {
+            
+            e.preventDefault();
+
+            output.innerText = " "
+
+            const num_val = parseInt(num.value)
+            const range_val = parseInt(range.value)
+
+            for(itr=0; itr < range_val; itr++){
+                output.innerHTML += `${(itr+1)} x ${num_val} = ${(itr+1)*num_val} <br/>`
+            }
+        })
+
+
+    </script>
+</body>
+</html>
